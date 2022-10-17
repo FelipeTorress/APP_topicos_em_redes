@@ -42,6 +42,11 @@ function App() {
     }
   };
 
+  const disable = {
+    opacity: 0.3,
+    cursor: "not-allowed"
+  }
+
   useEffect(() => {
     app.start();
   }, []);
@@ -79,11 +84,11 @@ function App() {
               <h3>“Já vou”</h3>
               <button onClick={() => playSound(1)}>Enviar</button>
             </LineAnswers>
-            <LineAnswers>
+            <LineAnswers style={disable}>
               <h3>“Um minuto”</h3>
               <button onClick={() => playSound(2)}>Enviar</button>
             </LineAnswers>
-            <LineAnswers>
+            <LineAnswers style={disable}>
               <h3>“Não estou em casa”</h3>
               <button onClick={() => playSound(3)}>Enviar</button>
             </LineAnswers>
