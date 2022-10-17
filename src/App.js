@@ -3,6 +3,7 @@ import './App.css';
 import {  Container, Options, Card, BigCard, Title, LineAnswers } from "./appStyle";
 import dispositivos from "./public/icons/dispositivos.svg";
 import casinha from "./public/icons/casinha.svg";
+import api_get_first_alert from './services/api_play_alert_sound';
 import api from './services/api';
 
 function App() {
@@ -13,7 +14,8 @@ function App() {
   const [myNotifications, setMyNotifications] = useState([]);
 
   function playSound(value){
-    alert(value);
+    const response = api_get_first_alert.post();
+    alert(response);
   }
 
   async function charge (){
